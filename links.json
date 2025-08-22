@@ -312,14 +312,6 @@
     "icon": "link"
   },
   {
-    "title": "CSC Skill Center",
-    "url": "https://skillcsc.in/",
-    "desc": "Skill Training via CSC",
-    "category": "CSC",
-    "color": "#DA70D6",
-    "icon": "link"
-  },
-  {
     "title": "CSC DigiPay",
     "url": "https://cscdigipay.in/",
     "desc": "CSC DigiPay AEPS Banking",
@@ -352,3 +344,4 @@
     "icon": "link"
   }
 ]
+
