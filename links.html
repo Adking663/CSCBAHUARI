@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSC Bahuari — Services Hub</title>
+  <style>
+    /* ==== Root Theme ==== */
+    :root {
+      --bg: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+      --glass: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * {box-sizing:border-box;}
+    body {
+      margin:0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    /* ==== Header ==== */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+      overflow:hidden;
+    }
+    header::before {
+      content:"";
+      position:absolute;
+      top:-100px;left:-100px;
+      width:400px;height:400px;
+      background: radial-gradient(circle,var(--accent),transparent 70%);
+      filter: blur(120px);
+      opacity:0.4;
+      animation: float 12s infinite alternate;
+    }
+    @keyframes float {
+      from {transform:translateY(0);}
+      to {transform:translateY(40px);}
+    }
+    header h1 {
+      margin:0;
+      font-size:2.8rem;
+      font-weight:700;
+      color:var(--accent);
+      letter-spacing:1px;
+    }
+    header p {
+      margin-top:10px;
+      font-size:1.1rem;
+      color:var(--muted);
+    }
+
+    /* ==== Panel ==== */
+    .panel {
+      margin:0 auto;
+      max-width:1200px;
+      padding:25px;
+      border-radius:22px;
+      background: var(--glass);
+      backdrop-filter: blur(24px) saturate(160%);
+      border:1px solid var(--border);
+      box-shadow:0 10px 35px rgba(0,0,0,.6);
+    }
+
+    /* ==== Search + Filters ==== */
+    .topbar {
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+    }
+    .filters {
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+    .filters button {
+      padding:8px 16px;
+      border:none;border-radius:12px;
+      background:var(--accent);
+      color:#fff;font-size:14px;
+      cursor:pointer;
+      transition:0.2s;
+    }
+    .filters button:hover {background:#0ea5e9;transform:scale(1.05);}
+    .search-box input {
+      padding:10px 16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.07);
+      color:white;
+      font-size:15px;
+      min-width:250px;
+      outline:none;
+      transition:0.3s;
+    }
+    .search-box input:focus {border-color:var(--accent);box-shadow:0 0 10px var(--accent);}
+
+    /* ==== Grid ==== */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap:20px;
+    }
+    .card {
+      padding:20px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid var(--border);
+      transition: all .25s;
+      text-decoration:none;
+      color:var(--text);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before {
+      content:"";
+      position:absolute;
+      top:-50%;left:-50%;
+      width:200%;height:200%;
+      background:radial-gradient(circle,rgba(56,189,248,0.15),transparent 70%);
+      transform:rotate(25deg);
+      opacity:0;transition:0.5s;
+    }
+    .card:hover::before {opacity:1;}
+    .card:hover {transform:translateY(-8px) scale(1.02);box-shadow:0 12px 28px rgba(0,0,0,.6);}
+    .card h4 {margin:0 0 8px;font-size:17px;color:var(--accent);}
+    .card p {margin:0;font-size:13px;color:var(--muted);}
+    .tag {
+      display:inline-block;
+      margin-top:12px;
+      font-size:12px;
+      padding:4px 9px;
+      border-radius:8px;
+      background:rgba(56,189,248,0.25);
+      color:var(--accent);
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+      color:var(--muted);
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSC Bahuari</h1>
+    <p>✨ One Hub for All Government & CSC Services ✨</p>
+  </header>
+
+  <main class="panel">
+    <div class="topbar">
+      <div class="filters" id="filters"></div>
+      <div class="search-box">
+        <input type="text" id="search" placeholder="🔍 Search services...">
+      </div>
+    </div>
+    <div id="linksGrid" class="grid"></div>
+  </main>
+
+  <footer>
+    © 2025 CSC Bahuari | Designed with ❤️ Pro Glass UI
+  </footer>
+
+  <script>
+    let links = [];
+    let categories = new Set();
+    let currentCategory = "all";
+
+    async function loadLinks(){
+      try {
+        const res = await fetch("https://adking663.github.io/CSCBAHUARI/links.json");
+        links = await res.json();
+        // Collect categories
+        links.forEach(l => categories.add(l.category));
+
+        // Render filter buttons
+        const filterBox = document.getElementById("filters");
+        filterBox.innerHTML = `<button onclick="setCategory('all')">All</button>`;
+        categories.forEach(cat=>{
+          filterBox.innerHTML += `<button onclick="setCategory('${cat}')">${cat}</button>`;
+        });
+
+        // Search event
+        document.getElementById("search").addEventListener("input", ()=>{
+          renderLinks(currentCategory);
+        });
+
+        renderLinks("all");
+      } catch(err){
+        document.getElementById("linksGrid").innerHTML = "<p>⚠️ Error loading links.json</p>";
+        console.error(err);
+      }
+    }
+
+    function setCategory(cat){
+      currentCategory = cat;
+      renderLinks(cat);
+    }
+
+    function renderLinks(category="all"){
+      const grid = document.getElementById("linksGrid");
+      const searchTerm = document.getElementById("search").value.toLowerCase();
+      grid.innerHTML = "";
+      links.filter(l => 
+        (category==="all" || l.category===category) &&
+        (l.title.toLowerCase().includes(searchTerm) || l.desc.toLowerCase().includes(searchTerm))
+      ).forEach(l=>{
+        const card = document.createElement("a");
+        card.href = l.url;
+        card.target = "_blank";
+        card.className="card";
+        card.innerHTML = `
+          <h4>${l.title}</h4>
+          <p>${l.desc}</p>
+          <span class="tag">${l.category}</span>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    loadLinks();
+  </script>
+</body>
+</html>
