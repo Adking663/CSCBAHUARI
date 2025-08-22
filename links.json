@@ -108,14 +108,7 @@
     "color": "#008B8B",
     "icon": "link"
   },
-  {
-    "title": "UMANG App",
-    "url": "https://web.umang.gov.in/",
-    "desc": "Unified Mobile Application for New-age Governance",
-    "category": "Government",
-    "color": "#2E8B57",
-    "icon": "link"
-  },
+
   {
     "title": "e-SHRAM",
     "url": "https://eshram.gov.in/",
@@ -132,14 +125,7 @@
     "color": "#2F4F4F",
     "icon": "link"
   },
-  {
-    "title": "CSC PMGDISHA",
-    "url": "https://www.pmgdisha.in/",
-    "desc": "Pradhan Mantri Gramin Digital Saksharta Abhiyan",
-    "category": "CSC",
-    "color": "#FF4500",
-    "icon": "link"
-  },
+
 
   {
     "title": "IRCTC",
@@ -149,14 +135,7 @@
     "color": "#191970",
     "icon": "link"
   },
-  {
-    "title": "FASTag NHAI",
-    "url": "https://fastag.ihmcl.com/",
-    "desc": "Recharge & Manage FASTag",
-    "category": "Government",
-    "color": "#FF6347",
-    "icon": "link"
-  },
+  
 
 
   {
@@ -210,6 +189,7 @@
     "icon": "link"
   }
 ]
+
 
 
 
