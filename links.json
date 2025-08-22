@@ -8,14 +8,6 @@
     "color": "#228B22",
     "icon": "link"
   },
-  {
-    "title": "CSC Banking Services",
-    "url": "https://www.cscbankmitra.in/",
-    "desc": "CSC Bank Mitra & Financial Services",
-    "category": "CSC",
-    "color": "#2E8B57",
-    "icon": "link"
-  },
 
   {
     "title": "Bihar Board (BSEB)",
@@ -189,6 +181,7 @@
     "icon": "link"
   }
 ]
+
 
 
 
