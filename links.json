@@ -1,0 +1,354 @@
+[
+  {
+    "title": "CSC Digital Seva",
+    "url": "https://digitalseva.csc.gov.in/",
+    "desc": "CSC Digital Seva Portal",
+    "category": "CSC",
+    "color": "#006400",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Registration",
+    "url": "https://register.csc.gov.in/",
+    "desc": "New VLE Registration",
+    "category": "CSC",
+    "color": "#228B22",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Banking Services",
+    "url": "https://www.cscbankmitra.in/",
+    "desc": "CSC Bank Mitra & Financial Services",
+    "category": "CSC",
+    "color": "#2E8B57",
+    "icon": "link"
+  },
+  {
+    "title": "CSC IRCTC Agent",
+    "url": "https://www.csctravelservices.in/",
+    "desc": "Book Train Tickets via CSC IRCTC",
+    "category": "CSC",
+    "color": "#4682B4",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Insurance",
+    "url": "https://csc-insurance.in/",
+    "desc": "Insurance Services via CSC",
+    "category": "CSC",
+    "color": "#8B0000",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Telemedicine",
+    "url": "https://telemed.csccloud.in/",
+    "desc": "Online Doctor Consultation via CSC",
+    "category": "CSC",
+    "color": "#FF1493",
+    "icon": "link"
+  },
+  {
+    "title": "CSC E-Learning",
+    "url": "https://www.cscelearning.in/",
+    "desc": "Education & Skill Development",
+    "category": "CSC",
+    "color": "#DAA520",
+    "icon": "link"
+  },
+  {
+    "title": "Bihar Board (BSEB)",
+    "url": "http://biharboardonline.bihar.gov.in/",
+    "desc": "Bihar School Examination Board Official Website",
+    "category": "BSEB",
+    "color": "#8B0000",
+    "icon": "link"
+  },
+  {
+    "title": "BSEB Student Registration",
+    "url": "http://seniorsecondary.biharboardonline.com/",
+    "desc": "BSEB 10th/12th Student Registration Portal",
+    "category": "BSEB",
+    "color": "#B22222",
+    "icon": "link"
+  },
+  {
+    "title": "BSEB Dummy Admit Card",
+    "url": "http://dummyadmitcard.biharboardonline.com/",
+    "desc": "Download Dummy Admit Card for Exams",
+    "category": "BSEB",
+    "color": "#CD5C5C",
+    "icon": "link"
+  },
+  {
+    "title": "BSEB Result Portal",
+    "url": "http://results.biharboardonline.com/",
+    "desc": "Check Matric & Intermediate Results",
+    "category": "BSEB",
+    "color": "#DC143C",
+    "icon": "link"
+  },
+  {
+    "title": "BSEB Scholarship (MedhaSoft)",
+    "url": "http://medhasoft.bih.nic.in/",
+    "desc": "Apply for Bihar Board Scholarship",
+    "category": "BSEB",
+    "color": "#A52A2A",
+    "icon": "link"
+  },
+  {
+    "title": "BSEB OFSS Admission",
+    "url": "http://www.ofssbihar.in/",
+    "desc": "Online Facilitation System for Students",
+    "category": "BSEB",
+    "color": "#8B4513",
+    "icon": "link"
+  },
+  {
+    "title": "Aadhaar Services",
+    "url": "https://uidai.gov.in/",
+    "desc": "UIDAI Aadhaar Official Portal",
+    "category": "Government",
+    "color": "#00008B",
+    "icon": "link"
+  },
+  {
+    "title": "DigiLocker",
+    "url": "https://digilocker.gov.in/",
+    "desc": "Access your digital documents securely",
+    "category": "Government",
+    "color": "#1E90FF",
+    "icon": "link"
+  },
+  {
+    "title": "PAN Card Services",
+    "url": "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html",
+    "desc": "Apply or Update PAN Card",
+    "category": "Government",
+    "color": "#FF8C00",
+    "icon": "link"
+  },
+  {
+    "title": "Income Tax Portal",
+    "url": "https://www.incometax.gov.in/",
+    "desc": "File ITR Online",
+    "category": "Government",
+    "color": "#2F4F4F",
+    "icon": "link"
+  },
+  {
+    "title": "PM Kisan Yojana",
+    "url": "https://pmkisan.gov.in/",
+    "desc": "Pradhan Mantri Kisan Samman Nidhi",
+    "category": "Government",
+    "color": "#228B22",
+    "icon": "link"
+  },
+  {
+    "title": "EPFO",
+    "url": "https://www.epfindia.gov.in/",
+    "desc": "Employees Provident Fund Organization",
+    "category": "Government",
+    "color": "#483D8B",
+    "icon": "link"
+  },
+  {
+    "title": "Passport Seva",
+    "url": "https://portal2.passportindia.gov.in/",
+    "desc": "Apply or Renew Passport Online",
+    "category": "Government",
+    "color": "#191970",
+    "icon": "link"
+  },
+  {
+    "title": "National Scholarship Portal",
+    "url": "https://scholarships.gov.in/",
+    "desc": "Apply for National Scholarships",
+    "category": "Government",
+    "color": "#4B0082",
+    "icon": "link"
+  },
+  {
+    "title": "Ration Card Services",
+    "url": "https://nfsa.gov.in/",
+    "desc": "National Food Security Portal",
+    "category": "Government",
+    "color": "#800000",
+    "icon": "link"
+  },
+  {
+    "title": "Ayushman Bharat",
+    "url": "https://pmjay.gov.in/",
+    "desc": "Ayushman Bharat - PMJAY Health Scheme",
+    "category": "Government",
+    "color": "#008B8B",
+    "icon": "link"
+  },
+  {
+    "title": "UMANG App",
+    "url": "https://web.umang.gov.in/",
+    "desc": "Unified Mobile Application for New-age Governance",
+    "category": "Government",
+    "color": "#2E8B57",
+    "icon": "link"
+  },
+  {
+    "title": "e-SHRAM",
+    "url": "https://eshram.gov.in/",
+    "desc": "National Database of Unorganized Workers",
+    "category": "Government",
+    "color": "#D2691E",
+    "icon": "link"
+  },
+  {
+    "title": "Jan Dhan Yojana",
+    "url": "https://pmjdy.gov.in/",
+    "desc": "Financial Inclusion Scheme",
+    "category": "Government",
+    "color": "#2F4F4F",
+    "icon": "link"
+  },
+  {
+    "title": "CSC PMGDISHA",
+    "url": "https://www.pmgdisha.in/",
+    "desc": "Pradhan Mantri Gramin Digital Saksharta Abhiyan",
+    "category": "CSC",
+    "color": "#FF4500",
+    "icon": "link"
+  },
+  {
+    "title": "Railway Enquiry",
+    "url": "https://enquiry.indianrail.gov.in/",
+    "desc": "Indian Railways Enquiry Portal",
+    "category": "Government",
+    "color": "#000080",
+    "icon": "link"
+  },
+  {
+    "title": "IRCTC",
+    "url": "https://www.irctc.co.in/",
+    "desc": "Online Train Ticket Booking",
+    "category": "Government",
+    "color": "#191970",
+    "icon": "link"
+  },
+  {
+    "title": "FASTag NHAI",
+    "url": "https://fastag.ihmcl.com/",
+    "desc": "Recharge & Manage FASTag",
+    "category": "Government",
+    "color": "#FF6347",
+    "icon": "link"
+  },
+  {
+    "title": "Driving License",
+    "url": "https://parivahan.gov.in/",
+    "desc": "Transport Services & Driving License",
+    "category": "Government",
+    "color": "#556B2F",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Health Services",
+    "url": "https://cscservices.in/health/",
+    "desc": "Health Services via CSC",
+    "category": "CSC",
+    "color": "#DC143C",
+    "icon": "link"
+  },
+  {
+    "title": "CSC GST Services",
+    "url": "https://csc.gov.in/gst",
+    "desc": "GST Registration & Filing",
+    "category": "CSC",
+    "color": "#8B008B",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Legal Services",
+    "url": "https://www.csclaw.in/",
+    "desc": "Legal Support via CSC",
+    "category": "CSC",
+    "color": "#2E0854",
+    "icon": "link"
+  },
+  {
+    "title": "Election Commission",
+    "url": "https://eci.gov.in/",
+    "desc": "Voter ID & Election Services",
+    "category": "Government",
+    "color": "#2F4F4F",
+    "icon": "link"
+  },
+  {
+    "title": "CSC WiFi Choupal",
+    "url": "https://www.wifichoupal.in/",
+    "desc": "Digital India WiFi Choupal",
+    "category": "CSC",
+    "color": "#4682B4",
+    "icon": "link"
+  },
+  {
+    "title": "MyGov",
+    "url": "https://mygov.in/",
+    "desc": "Government Citizen Engagement Portal",
+    "category": "Government",
+    "color": "#20B2AA",
+    "icon": "link"
+  },
+  {
+    "title": "Bihar RTPS",
+    "url": "http://210.212.23.51/rtps/",
+    "desc": "Right to Public Service Bihar",
+    "category": "BSEB",
+    "color": "#DC143C",
+    "icon": "link"
+  },
+  {
+    "title": "Bihar Pension Portal",
+    "url": "https://www.epension.bihar.gov.in/",
+    "desc": "Apply/Check Pension Status",
+    "category": "Government",
+    "color": "#C71585",
+    "icon": "link"
+  },
+  {
+    "title": "CSC Skill Center",
+    "url": "https://skillcsc.in/",
+    "desc": "Skill Training via CSC",
+    "category": "CSC",
+    "color": "#DA70D6",
+    "icon": "link"
+  },
+  {
+    "title": "CSC DigiPay",
+    "url": "https://cscdigipay.in/",
+    "desc": "CSC DigiPay AEPS Banking",
+    "category": "CSC",
+    "color": "#006400",
+    "icon": "link"
+  },
+  {
+    "title": "Gas Booking",
+    "url": "https://mylpg.in/",
+    "desc": "Book LPG Gas Cylinder",
+    "category": "Government",
+    "color": "#FF4500",
+    "icon": "link"
+  },
+  {
+    "title": "Bihar Land Records",
+    "url": "http://biharbhumi.bihar.gov.in/",
+    "desc": "Bihar Land Record Management",
+    "category": "Government",
+    "color": "#8B4513",
+    "icon": "link"
+  },
+  {
+    "title": "Jeevan Pramaan",
+    "url": "https://jeevanpramaan.gov.in/",
+    "desc": "Digital Life Certificate",
+    "category": "Government",
+    "color": "#191970",
+    "icon": "link"
+  }
+]
