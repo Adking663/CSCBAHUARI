@@ -1,12 +1,5 @@
 [
-  {
-    "title": "CSC Digital Seva",
-    "url": "https://digitalseva.csc.gov.in/",
-    "desc": "CSC Digital Seva Portal",
-    "category": "CSC",
-    "color": "#006400",
-    "icon": "link"
-  },
+ 
   {
     "title": "CSC Registration",
     "url": "https://register.csc.gov.in/",
@@ -344,4 +337,5 @@
     "icon": "link"
   }
 ]
+
 
