@@ -5,68 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSC Bahuari — Services Hub</title>
   <style>
-    /* ==== Root Theme ==== */
     :root {
-      --bg: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
-      --glass: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.12);
+      --bg: radial-gradient(circle at top left, #0f172a, #1e293b 50%, #020617 100%);
+      --glass: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.15);
       --text: #f8fafc;
       --muted: #94a3b8;
       --accent: #38bdf8;
+      --glow: 0 0 18px rgba(56,189,248,0.7), 0 0 35px rgba(56,189,248,0.3);
+      --active: linear-gradient(135deg, #ef4444, #dc2626); /* Red gradient for active */
     }
-    * {box-sizing:border-box;}
+    * {box-sizing:border-box;margin:0;padding:0;}
     body {
-      margin:0;
       font-family: "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      overflow-x:hidden;
     }
+
     /* ==== Header ==== */
     header {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 70px 20px 50px;
       position: relative;
       overflow:hidden;
     }
     header::before {
       content:"";
       position:absolute;
-      top:-100px;left:-100px;
-      width:400px;height:400px;
-      background: radial-gradient(circle,var(--accent),transparent 70%);
+      inset:0;
+      background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
+      animation: glowmove 12s infinite alternate;
       filter: blur(120px);
-      opacity:0.4;
-      animation: float 12s infinite alternate;
     }
-    @keyframes float {
-      from {transform:translateY(0);}
-      to {transform:translateY(40px);}
+    @keyframes glowmove {
+      from {transform:translate(-10%,-10%);}
+      to {transform:translate(10%,10%);}
+    }
+    header img.logo {
+      position:absolute;
+      top:20px;
+      left:20px;
+      width:70px;
+      height:auto;
+      border-radius:12px;
+      box-shadow:0 0 15px rgba(56,189,248,0.6);
     }
     header h1 {
-      margin:0;
-      font-size:2.8rem;
-      font-weight:700;
+      font-size:3rem;
+      font-weight:800;
       color:var(--accent);
-      letter-spacing:1px;
+      text-shadow: var(--glow);
+      letter-spacing:1.5px;
+      animation: fadeDown 1.2s ease both;
     }
     header p {
-      margin-top:10px;
-      font-size:1.1rem;
+      margin-top:15px;
+      font-size:1.2rem;
       color:var(--muted);
+      animation: fadeUp 1.5s ease both;
     }
+    @keyframes fadeDown {from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeUp {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
     /* ==== Panel ==== */
     .panel {
       margin:0 auto;
       max-width:1200px;
-      padding:25px;
+      padding:28px;
       border-radius:22px;
       background: var(--glass);
-      backdrop-filter: blur(24px) saturate(160%);
+      backdrop-filter: blur(26px) saturate(160%);
       border:1px solid var(--border);
-      box-shadow:0 10px 35px rgba(0,0,0,.6);
+      box-shadow:0 10px 35px rgba(0,0,0,.65);
+      animation: fadeIn 1s ease both;
     }
+    @keyframes fadeIn {from{opacity:0;transform:scale(0.97);}to{opacity:1;transform:scale(1);}}
 
     /* ==== Search + Filters ==== */
     .topbar {
@@ -81,79 +96,89 @@
       display:flex;flex-wrap:wrap;gap:10px;
     }
     .filters button {
-      padding:8px 16px;
-      border:none;border-radius:12px;
-      background:var(--accent);
-      color:#fff;font-size:14px;
+      padding:9px 18px;
+      border:none;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#0ea5e9);
+      color:#fff;font-size:14px;font-weight:600;
       cursor:pointer;
-      transition:0.2s;
+      transition:0.3s;
+      box-shadow:0 3px 10px rgba(0,0,0,.4);
     }
-    .filters button:hover {background:#0ea5e9;transform:scale(1.05);}
+    .filters button:hover {transform:translateY(-3px) scale(1.05);box-shadow:var(--glow);}
+    .filters button.active {
+      background:var(--active);
+      box-shadow:0 0 15px rgba(239,68,68,0.7);
+    }
     .search-box input {
-      padding:10px 16px;
-      border-radius:12px;
+      padding:11px 18px;
+      border-radius:14px;
       border:1px solid var(--border);
-      background:rgba(255,255,255,0.07);
+      background:rgba(255,255,255,0.08);
       color:white;
       font-size:15px;
-      min-width:250px;
+      min-width:260px;
       outline:none;
       transition:0.3s;
     }
-    .search-box input:focus {border-color:var(--accent);box-shadow:0 0 10px var(--accent);}
+    .search-box input:focus {border-color:var(--accent);box-shadow:var(--glow);}
 
     /* ==== Grid ==== */
     .grid {
       display:grid;
       grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-      gap:20px;
+      gap:22px;
     }
     .card {
-      padding:20px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.05);
+      padding:22px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.06);
       border:1px solid var(--border);
-      transition: all .25s;
+      transition: all .35s;
       text-decoration:none;
       color:var(--text);
       position:relative;
       overflow:hidden;
+      animation: floatUp 0.8s ease both;
     }
+    @keyframes floatUp {from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
     .card::before {
       content:"";
       position:absolute;
       top:-50%;left:-50%;
       width:200%;height:200%;
-      background:radial-gradient(circle,rgba(56,189,248,0.15),transparent 70%);
+      background:radial-gradient(circle,rgba(56,189,248,0.2),transparent 70%);
       transform:rotate(25deg);
       opacity:0;transition:0.5s;
     }
     .card:hover::before {opacity:1;}
-    .card:hover {transform:translateY(-8px) scale(1.02);box-shadow:0 12px 28px rgba(0,0,0,.6);}
-    .card h4 {margin:0 0 8px;font-size:17px;color:var(--accent);}
-    .card p {margin:0;font-size:13px;color:var(--muted);}
+    .card:hover {transform:translateY(-10px) scale(1.04);box-shadow:var(--glow);}
+    .card h4 {margin:0 0 10px;font-size:18px;color:var(--accent);}
+    .card p {margin:0;font-size:14px;color:var(--muted);}
     .tag {
       display:inline-block;
-      margin-top:12px;
+      margin-top:14px;
       font-size:12px;
-      padding:4px 9px;
+      padding:5px 10px;
       border-radius:8px;
-      background:rgba(56,189,248,0.25);
+      background:rgba(56,189,248,0.2);
       color:var(--accent);
+      font-weight:500;
     }
 
     /* ==== Footer ==== */
     footer {
       text-align:center;
-      padding:25px;
+      padding:28px;
       font-size:14px;
       color:var(--muted);
-      margin-top:40px;
+      margin-top:45px;
     }
   </style>
 </head>
 <body>
   <header>
+    <!-- Live CSC logo -->
+    <img class="logo" src="https://th.bing.com/th/id/OIP.-EEd4FnBF4Jql36sU9m_NwHaC5?w=348&h=136&c=7&r=0&o=7&pid=1.7&rm=3" alt="CSC Logo">
     <h1>CSC Bahuari</h1>
     <p>✨ One Hub for All Government & CSC Services ✨</p>
   </header>
@@ -181,17 +206,14 @@
       try {
         const res = await fetch("https://adking663.github.io/CSCBAHUARI/links.json");
         links = await res.json();
-        // Collect categories
         links.forEach(l => categories.add(l.category));
 
-        // Render filter buttons
         const filterBox = document.getElementById("filters");
-        filterBox.innerHTML = `<button onclick="setCategory('all')">All</button>`;
+        filterBox.innerHTML = `<button onclick="setCategory('all')" class="active">All</button>`;
         categories.forEach(cat=>{
           filterBox.innerHTML += `<button onclick="setCategory('${cat}')">${cat}</button>`;
         });
 
-        // Search event
         document.getElementById("search").addEventListener("input", ()=>{
           renderLinks(currentCategory);
         });
@@ -205,6 +227,13 @@
 
     function setCategory(cat){
       currentCategory = cat;
+      // Active button highlight
+      document.querySelectorAll(".filters button").forEach(btn=>{
+        btn.classList.remove("active");
+        if(btn.textContent === cat || (cat==="all" && btn.textContent==="All")){
+          btn.classList.add("active");
+        }
+      });
       renderLinks(cat);
     }
 
